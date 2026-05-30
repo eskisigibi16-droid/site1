@@ -1,73 +1,64 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sistem Analizi</title>
-
-<style>
-body{
-    background:#000;
-    color:#00ff00;
-    font-family:Consolas, monospace;
-    margin:0;
-    padding:20px;
-}
-
-#terminal{
-    white-space:pre-wrap;
-    line-height:1.5;
-}
-
-#sonuc{
-    display:none;
-    text-align:center;
-    margin-top:50px;
-    font-size:32px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Analizi</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            font-size: 14px;
+            overflow-x: hidden;
+        }
+        .line {
+            margin-bottom: 8px;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
 
-<div id="terminal"></div>
+    <div id="terminal"></div>
 
-<div id="sonuc">
-    😆 Şakalandın!<br><br>
-    Hiçbir şey taranmadı.<br>
-    Güzel günler!
-</div>
+    <script>
+        const lines = [
+            "Connecting to core server...",
+            "Connection established via proxy 192.168.1.99",
+            "Bypassing firewall security layers...",
+            "Access Granted. Root privileges obtained.",
+            "Analyzing system memory leaks...",
+            "Scanning local directory structures...",
+            "WARNING: 3 unencrypted data packets found.",
+            "Dumping system registry logs...",
+            "Extracting system metadata...",
+            "Optimizing CPU thread allocations...",
+            "SYSTEM ANALYSIS COMPLETE. WAITING FOR COMMAND..."
+        ];
 
-<script>
-const satirlar = [
-"[+] Güvenli bağlantı kuruldu...",
-"[+] Sistem bilgileri kontrol ediliyor...",
-"[+] Analiz başlatıldı...",
-"[#####-----] %50",
-"[#######---] %70",
-"[#########-] %90",
-"[##########] %100",
-"[+] Sonuç hazırlanıyor..."
-];
+        const terminal = document.getElementById("terminal");
+        let i = 0;
 
-const terminal = document.getElementById("terminal");
+        function printLine() {
+            if (i < lines.length) {
+                let div = document.createElement("div");
+                div.className = "line";
+                div.innerText = "> " + lines[i];
+                terminal.appendChild(div);
+                
+                // Sayfa aşağı doğru otomatik kaydırılsın
+                window.scrollTo(0, document.body.scrollHeight);
+                
+                i++;
+                setTimeout(printLine, 400); // Satırların geliş hızı (400 milisaniye)
+            }
+        }
 
-let i = 0;
-
-function yaz() {
-    if(i < satirlar.length){
-        terminal.innerHTML += satirlar[i] + "<br>";
-        i++;
-        setTimeout(yaz, 1000);
-    } else {
-        setTimeout(() => {
-            document.getElementById("terminal").style.display = "none";
-            document.getElementById("sonuc").style.display = "block";
-        }, 1500);
-    }
-}
-
-yaz();
-</script>
+        // Animasyonu başlat
+        printLine();
+    </script>
 
 </body>
 </html>
