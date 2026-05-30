@@ -10,11 +10,12 @@
             color: #00ff00;
             font-family: 'Courier New', Courier, monospace;
             padding: 20px;
-            font-size: 14px;
+            font-size: 13px;
             overflow-x: hidden;
+            line-height: 1.6;
         }
         .line {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             white-space: pre-wrap;
         }
     </style>
@@ -25,17 +26,52 @@
 
     <script>
         const lines = [
-            "Connecting to core server...",
-            "Connection established via proxy 192.168.1.99",
-            "Bypassing firewall security layers...",
-            "Access Granted. Root privileges obtained.",
-            "Analyzing system memory leaks...",
-            "Scanning local directory structures...",
-            "WARNING: 3 unencrypted data packets found.",
-            "Dumping system registry logs...",
-            "Extracting system metadata...",
-            "Optimizing CPU thread allocations...",
-            "SYSTEM ANALYSIS COMPLETE. WAITING FOR COMMAND..."
+            "Initializing deep system core diagnostics...",
+            "Connecting to primary proxy server at 192.168.1.99...",
+            "Establishing secure handshake via SSL TLS 1.3...",
+            "Connection stable. Latency: 12ms.",
+            "Bypassing internal security layers...",
+            "Injecting payload into local runtime environment...",
+            "Access Granted. Root privileges successfully obtained.",
+            "--------------------------------------------------",
+            "SCANNING SYSTEM DIRECTORIES & MEMORY LEAKS",
+            "--------------------------------------------------",
+            "Scanning /root/sys/kernel/modules...",
+            "Scanning /etc/security/limits.conf...",
+            "Scanning local user database files...",
+            "Extracting system metadata and active hardware logs...",
+            "Optimizing CPU thread allocations for extraction...",
+            "WARNING: 3 unencrypted data packets detected in memory.",
+            "Isolating suspicious background processes...",
+            "Dumping volatile system registry files...",
+            "Checking local network interface status (eth0)...",
+            "Analyzing active socket connections on port 443...",
+            "--------------------------------------------------",
+            "HARDWARE & INFRASTRUCTURE DIAGNOSTICS",
+            "--------------------------------------------------",
+            "Fetching GPU core temperature and clock speeds...",
+            "Analyzing NVMe SSD write/read cycles...",
+            "Checking memory sector consistency (RAM Block A-D)...",
+            "Parsing hardware identification numbers (HWID)...",
+            "Verifying BIOS firmware signature authenticity...",
+            "Mapping local dynamic link libraries (.dll modules)...",
+            "Tracing network routing hops to main server...",
+            "Analyzing filesystem encryption status (AES-256)...",
+            "Clearing system cache buffers to prevent tracking...",
+            "Generating comprehensive diagnostic crash report...",
+            "--------------------------------------------------",
+            "SECURITY OVERRIDE & FINAL DEPLOYMENT",
+            "--------------------------------------------------",
+            "Overriding default system administrator policies...",
+            "Establishing persistent backdoor link...",
+            "Syncing local database logs with remote server...",
+            "Uploading system configuration profiles...",
+            "Encapsulating secure connection packets...",
+            "Removing temporary execution tracks and logs...",
+            "Finalizing diagnostic subroutines...",
+            "...",
+            "SYSTEM ANALYSIS COMPLETE. PROTOCOL 404 DEPLOYED.",
+            "ALL TARGET DATA TERMINAL STABLE. AWAITING REMOTE COMMAND..."
         ];
 
         const terminal = document.getElementById("terminal");
@@ -48,15 +84,16 @@
                 div.innerText = "> " + lines[i];
                 terminal.appendChild(div);
                 
-                // Sayfa aşağı doğru otomatik kaydırılsın
+                // Ekranın otomatik olarak en aşağı kaymasını sağlar
                 window.scrollTo(0, document.body.scrollHeight);
                 
                 i++;
-                setTimeout(printLine, 400); // Satırların geliş hızı (400 milisaniye)
+                // Satırların geliş hızını hafifçe düşürdüm ki okumaya çalışırken panik artsın (350 milisaniye)
+                setTimeout(printLine, 350); 
             }
         }
 
-        // Animasyonu başlat
+        // Başlat
         printLine();
     </script>
 
